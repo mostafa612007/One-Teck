@@ -1,3 +1,19 @@
+// ── Header search form behavior ───────────────────────────────────
+(function () {
+  const form = document.getElementById('headerSearchForm');
+  const input = document.getElementById('headerSearchInput');
+  const category = document.getElementById('headerCategorySelect');
+
+  if (!form || !input || !category) return;
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const searchValue = input.value.trim();
+    const selectedCategory = category.value;
+    console.log(`Search: "${searchValue}" | Category: ${selectedCategory}`);
+  });
+})();
+
 function show_cards(category) {
     var cards = document.querySelector(`.${category}`);
     cards.style.display = "block";
